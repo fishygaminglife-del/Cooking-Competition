@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bl8uglkrytkqc"]
+
+[ext_resource type="Texture2D" uid="uid://elyru4r5vecn" path="res://assets/Cooker.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bbe735gna2i5p" path="res://scripts/player.gd" id="1_g2els"]
+
+[node name="Node2D" type="CharacterBody2D" unique_id=1384372168]
+script = ExtResource("1_g2els")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2119123444]
+polygon = PackedVector2Array(-6, -12, 7, -12, 6, -4, 3, -1, 13, 8, 7, 10, 3, 25, 10, 29, 10, 32, -10, 32, -10, 29, -4, 25, -7, 10, -12, 6, -3, -1, -6, -4)
+
+[node name="Cooker" type="Sprite2D" parent="." unique_id=1130771188]
+texture = ExtResource("1_3vyb7")
