@@ -5,9 +5,11 @@
 [ext_resource type="FontFile" uid="uid://conhfq3a72ri5" path="res://fonts/Gelasio/static/Gelasio-Bold.ttf" id="3_0667q"]
 [ext_resource type="PackedScene" uid="uid://bl8uglkrytkqc" path="res://scenes/player.tscn" id="3_ro446"]
 [ext_resource type="Texture2D" uid="uid://bsrv2jblkdnj6" path="res://assets/pizza.png" id="5_mh3ht"]
-[ext_resource type="Script" uid="uid://coqo6agfvqf78" path="res://scripts/pizza_base.gd" id="6_llku6"]
+[ext_resource type="Script" uid="uid://cx1flj1bxdtpn" path="res://scripts/drop_1.gd" id="6_vhtrk"]
 [ext_resource type="Texture2D" uid="uid://dq10n3ip2plbd" path="res://assets/cheeseonpizza.png" id="7_rbmyh"]
+[ext_resource type="Script" uid="uid://dmetqncyis826" path="res://scripts/drop_2.gd" id="8_77fpp"]
 [ext_resource type="Texture2D" uid="uid://4f3isqr3ovb1" path="res://assets/peperoniaonpizza.png" id="9_5afle"]
+[ext_resource type="Script" uid="uid://b35d0f7mb4jqo" path="res://scripts/drop_3.gd" id="10_qe7se"]
 [ext_resource type="Texture2D" uid="uid://0r1snyvfk06f" path="res://assets/oniononpizza.png" id="11_41mhs"]
 [ext_resource type="Texture2D" uid="uid://dc4accihfcfi1" path="res://assets/peperonia.png" id="12_rpqjd"]
 [ext_resource type="Script" uid="uid://0ociby3omanc" path="res://scripts/dragginscript.gd" id="13_5afle"]
@@ -67,6 +69,13 @@ size = Vector2(57, 101)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqjd"]
 size = Vector2(57.5, 73)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yh2hd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 1000
+corner_radius_top_right = 1000
+corner_radius_bottom_right = 1000
+corner_radius_bottom_left = 1000
 
 [node name="Node2D" type="Node2D" unique_id=1008204636]
 script = ExtResource("1_yl18i")
@@ -243,40 +252,69 @@ uppercase = true
 position = Vector2(648, 532)
 scale = Vector2(2, 2)
 
-[node name="PizzaBase" type="TextureRect" parent="." unique_id=1762829599 groups=["pizza"]]
+[node name="PizzaBase" type="TextureRect" parent="." unique_id=1762829599]
 offset_left = 408.0
 offset_top = 160.0
 offset_right = 836.5309
 offset_bottom = 497.0
-mouse_filter = 0
+mouse_filter = 2
 texture = ExtResource("5_mh3ht")
 stretch_mode = 5
-script = ExtResource("6_llku6")
 
-[node name="CheeseImage" type="TextureRect" parent="PizzaBase" unique_id=1641564330]
+[node name="Drop1" type="Panel" parent="PizzaBase" unique_id=1404802923]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 12.0
+offset_right = 372.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yh2hd")
+script = ExtResource("6_vhtrk")
+
+[node name="CheeseImage" type="TextureRect" parent="PizzaBase/Drop1" unique_id=1641564330]
 visible = false
 layout_mode = 0
-offset_left = 46.0
-offset_right = 382.0
-offset_bottom = 337.0
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 324.0
+offset_bottom = 325.0
 mouse_filter = 2
 texture = ExtResource("7_rbmyh")
 
-[node name="PeperoniImage" type="TextureRect" parent="PizzaBase" unique_id=1478748889]
+[node name="Drop2" type="Panel" parent="PizzaBase" unique_id=1238541271]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 12.0
+offset_right = 372.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yh2hd")
+script = ExtResource("8_77fpp")
+
+[node name="PeperoniaImage" type="TextureRect" parent="PizzaBase/Drop2" unique_id=1478748889]
 visible = false
 layout_mode = 0
-offset_left = 46.0
-offset_right = 382.0
-offset_bottom = 337.0
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 324.0
+offset_bottom = 325.0
 mouse_filter = 2
 texture = ExtResource("9_5afle")
 
-[node name="OnionImage" type="TextureRect" parent="PizzaBase" unique_id=1405138320]
+[node name="Drop3" type="Panel" parent="PizzaBase" unique_id=268146226]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 12.0
+offset_right = 372.0
+offset_bottom = 324.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yh2hd")
+script = ExtResource("10_qe7se")
+
+[node name="OnionImage" type="TextureRect" parent="PizzaBase/Drop3" unique_id=1405138320]
 visible = false
 layout_mode = 0
-offset_left = 46.0
-offset_right = 382.0
-offset_bottom = 337.0
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 324.0
+offset_bottom = 325.0
 mouse_filter = 2
 texture = ExtResource("11_41mhs")
 
@@ -285,37 +323,29 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PeperoniIcon" type="TextureRect" parent="PizzaBase/ToppingsTray" unique_id=607484713]
+[node name="PeperoniaIcon" type="TextureRect" parent="PizzaBase/ToppingsTray" unique_id=607484713]
 layout_mode = 0
-offset_left = -224.0
-offset_top = 85.0
-offset_right = -184.0
-offset_bottom = 125.0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("12_rpqjd")
 script = ExtResource("13_5afle")
-topping_type = "peperoni"
 
 [node name="CheeseIcon" type="TextureRect" parent="PizzaBase/ToppingsTray" unique_id=1202257150]
 layout_mode = 0
-offset_left = -145.0
-offset_top = 18.0
-offset_right = -105.0
-offset_bottom = 58.0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("13_7gqf7")
 script = ExtResource("13_5afle")
 
 [node name="OnionIcon" type="TextureRect" parent="PizzaBase/ToppingsTray" unique_id=629105244]
 layout_mode = 0
-offset_left = -368.0
-offset_top = 95.0
-offset_right = -328.0
-offset_bottom = 135.0
+offset_right = 40.0
+offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("14_7qggu")
 script = ExtResource("13_5afle")
-topping_type = "onion"
 
 [connection signal="body_entered" from="chopping" to="." method="_on_chopping_body_entered"]
 [connection signal="body_exited" from="chopping" to="." method="_on_chopping_body_exited"]
