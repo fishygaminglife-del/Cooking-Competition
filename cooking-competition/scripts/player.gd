@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 150
+var SPEED = 150
 
 func _physics_process(delta):
 	topdown_movement(delta)
