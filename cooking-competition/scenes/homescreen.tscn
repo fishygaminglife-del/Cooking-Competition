@@ -80,10 +80,10 @@ size = Vector2(93, 41)
 size = Vector2(191, 169)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41mhs"]
-size = Vector2(57, 67)
+size = Vector2(46.5, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqjd"]
-size = Vector2(57.5, 53)
+size = Vector2(41.75, 53)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jt35m"]
 size = Vector2(94, 38)
@@ -302,7 +302,7 @@ uppercase = true
 [node name="coffe" type="Area2D" parent="." unique_id=1204105379]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coffe" unique_id=1191278271]
-position = Vector2(875, 512.5)
+position = Vector2(869.75, 512.5)
 shape = SubResource("RectangleShape2D_41mhs")
 
 [node name="coffee" type="Label" parent="coffe" unique_id=504904065]
@@ -318,7 +318,7 @@ uppercase = true
 [node name="packing" type="Area2D" parent="." unique_id=1544589859]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="packing" unique_id=1120032222]
-position = Vector2(880, 371)
+position = Vector2(872.125, 371)
 shape = SubResource("RectangleShape2D_rpqjd")
 
 [node name="packe" type="Label" parent="packing" unique_id=1550277538]
@@ -339,27 +339,27 @@ shape = SubResource("RectangleShape2D_jt35m")
 
 [node name="Panel2" type="Panel" parent="." unique_id=598109830]
 offset_left = 1054.0
-offset_top = 119.0
+offset_top = 123.0
 offset_right = 1124.0
-offset_bottom = 176.0
+offset_bottom = 180.0
 
 [node name="Panel3" type="Panel" parent="." unique_id=2130554860]
 offset_left = 1054.0
-offset_top = 191.0
+offset_top = 195.0
 offset_right = 1124.0
-offset_bottom = 248.0
+offset_bottom = 252.0
 
 [node name="Panel4" type="Panel" parent="." unique_id=1192239699]
 offset_left = 1054.0
-offset_top = 262.0
+offset_top = 266.0
 offset_right = 1124.0
-offset_bottom = 319.0
+offset_bottom = 323.0
 
 [node name="Panel5" type="Panel" parent="." unique_id=418081628]
 offset_left = 1054.0
-offset_top = 332.0
+offset_top = 336.0
 offset_right = 1124.0
-offset_bottom = 389.0
+offset_bottom = 393.0
 
 [node name="Node2D" parent="." unique_id=265317266 instance=ExtResource("3_ro446")]
 position = Vector2(601, 518)
@@ -556,61 +556,61 @@ icon = ExtResource("14_77fpp")
 
 [node name="Pizza" type="Sprite2D" parent="." unique_id=1119678451]
 visible = false
-position = Vector2(1089, 148)
+position = Vector2(1089, 152)
 scale = Vector2(1.625, 1.625)
 texture = ExtResource("5_mh3ht")
 
 [node name="Cheeseonpizza" type="Sprite2D" parent="." unique_id=1934154484]
 visible = false
-position = Vector2(1090, 148)
+position = Vector2(1090, 152)
 scale = Vector2(1.625, 1.561)
 texture = ExtResource("7_rbmyh")
 
 [node name="Cookedpizza" type="Sprite2D" parent="." unique_id=1904958037]
 visible = false
-position = Vector2(1090, 149)
+position = Vector2(1090, 153)
 scale = Vector2(1.625, 1.625)
 texture = ExtResource("20_lh2q1")
 
 [node name="Cookedcheesepiza" type="Sprite2D" parent="." unique_id=896489110]
 visible = false
-position = Vector2(1090, 149)
+position = Vector2(1090, 153)
 scale = Vector2(1.625, 1.625)
 texture = ExtResource("21_jt35m")
 
 [node name="Peperoniaonpizza" type="Sprite2D" parent="." unique_id=1369940555]
 visible = false
-position = Vector2(1090, 147)
+position = Vector2(1090, 151)
 scale = Vector2(1.625, 1.625)
 texture = ExtResource("9_5afle")
 
 [node name="Oniononpizza" type="Sprite2D" parent="." unique_id=300118988]
 visible = false
-position = Vector2(1090, 149)
+position = Vector2(1090, 153)
 scale = Vector2(1.625, 1.625)
 texture = ExtResource("11_41mhs")
 
 [node name="Coffe" type="Sprite2D" parent="." unique_id=863633158]
 visible = false
-position = Vector2(1090.0001, 218.00002)
+position = Vector2(1090.0001, 222)
 scale = Vector2(2.65625, 2.5)
 texture = ExtResource("15_5afle")
 
 [node name="FruitSmoothie" type="Sprite2D" parent="." unique_id=1676206290]
 visible = false
-position = Vector2(1091.0001, 292.00003)
+position = Vector2(1091.0001, 296.00003)
 scale = Vector2(1.71875, 1.71875)
 texture = ExtResource("21_6l11k")
 
 [node name="Smoothie" type="Sprite2D" parent="." unique_id=2067846053]
 visible = false
-position = Vector2(1089, 288)
+position = Vector2(1089, 292)
 scale = Vector2(3.109376, 3.109376)
 texture = ExtResource("22_m6x35")
 
 [node name="PackedOrder" type="Sprite2D" parent="." unique_id=1373077332]
 visible = false
-position = Vector2(1084, 362)
+position = Vector2(1084, 366)
 scale = Vector2(2.3281245, 2.3281245)
 texture = ExtResource("25_jt35m")
 
