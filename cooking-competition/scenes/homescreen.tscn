@@ -20,8 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://bwjdvj65ygfep" path="res://assets/onion.png" id="14_7qggu"]
 [ext_resource type="Texture2D" uid="uid://dnxuhgvc5s15n" path="res://assets/exitbut.png" id="14_77fpp"]
 [ext_resource type="Texture2D" uid="uid://8niqywgyypio" path="res://assets/coffe.png" id="15_5afle"]
+[ext_resource type="Texture2D" uid="uid://bat2nt3v0q0yv" path="res://assets/cookedpizza.png" id="20_lh2q1"]
 [ext_resource type="Texture2D" uid="uid://c4cwtmkoxjp5i" path="res://assets/fruit smoothie.png" id="21_6l11k"]
+[ext_resource type="Texture2D" uid="uid://kpd0x562f5iy" path="res://assets/cookedcheesepiza.png" id="21_jt35m"]
 [ext_resource type="Texture2D" uid="uid://dwq4hi68ldobr" path="res://assets/smoothie.png" id="22_m6x35"]
+[ext_resource type="Texture2D" uid="uid://04tuelpfmoml" path="res://assets/packed order.png" id="25_jt35m"]
+[ext_resource type="Texture2D" uid="uid://7tsmiocligdj" path="res://assets/banner.png" id="26_hb8ns"]
+[ext_resource type="FontFile" uid="uid://cnoi5fc8p4223" path="res://fonts/Gelasio/Gelasio-VariableFont_wght.ttf" id="26_p7cqo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7idqh"]
 size = Vector2(1152, 20)
@@ -63,19 +68,25 @@ size = Vector2(34.5, 20)
 size = Vector2(266.75, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0667q"]
-size = Vector2(48, 119)
+size = Vector2(33, 75.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5afle"]
-size = Vector2(90, 56)
+size = Vector2(57, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe7se"]
-size = Vector2(123, 56)
+size = Vector2(93, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7cqo"]
+size = Vector2(191, 169)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41mhs"]
-size = Vector2(57, 101)
+size = Vector2(57, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqjd"]
-size = Vector2(57.5, 73)
+size = Vector2(57.5, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt35m"]
+size = Vector2(94, 38)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llku6"]
 bg_color = Color(0.5609549, 0.5609549, 0.56095487, 1)
@@ -85,6 +96,43 @@ bg_color = Color(0.32915837, 0.3291584, 0.3291583, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5afle"]
 bg_color = Color(0.32941177, 0.32941177, 0.32941177, 1)
+
+[sub_resource type="Animation" id="Animation_4biml"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-317, 199.00005)]
+}
+
+[sub_resource type="Animation" id="Animation_510qk"]
+resource_name = "banner_move"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-317, 190), Vector2(576, 190), Vector2(576, 190), Vector2(1498, 190)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lxlwg"]
+_data = {
+&"RESET": SubResource("Animation_4biml"),
+&"banner_move": SubResource("Animation_510qk")
+}
 
 [node name="Node2D" type="Node2D" unique_id=1008204636]
 script = ExtResource("1_yl18i")
@@ -190,14 +238,15 @@ shape = SubResource("RectangleShape2D_7gqf7")
 [node name="chopping" type="Area2D" parent="." unique_id=1644152931]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chopping" unique_id=1177224911]
-position = Vector2(389, 435.5)
+position = Vector2(380, 419.75)
 shape = SubResource("RectangleShape2D_0667q")
 
 [node name="Chope" type="Label" parent="chopping" unique_id=421483721]
+visible = false
 offset_left = 327.0
-offset_top = 389.0
+offset_top = 410.0
 offset_right = 339.0
-offset_bottom = 410.0
+offset_bottom = 431.0
 theme_override_fonts/font = ExtResource("3_0667q")
 text = "E"
 uppercase = true
@@ -205,14 +254,15 @@ uppercase = true
 [node name="mixing" type="Area2D" parent="." unique_id=709664581]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mixing" unique_id=662956116]
-position = Vector2(450, 347)
+position = Vector2(456, 328)
 shape = SubResource("RectangleShape2D_5afle")
 
 [node name="Mixe" type="Label" parent="mixing" unique_id=1551033928]
-offset_left = 435.0
-offset_top = 282.0
-offset_right = 447.0
-offset_bottom = 303.0
+visible = false
+offset_left = 453.0
+offset_top = 279.0
+offset_right = 465.0
+offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("3_0667q")
 text = "E"
 uppercase = true
@@ -220,14 +270,31 @@ uppercase = true
 [node name="pizza" type="Area2D" parent="." unique_id=902781881]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pizza" unique_id=868292933]
-position = Vector2(582, 348)
+position = Vector2(606, 336)
 shape = SubResource("RectangleShape2D_qe7se")
 
 [node name="pizzae" type="Label" parent="pizza" unique_id=1452051847]
-offset_left = 579.0
+visible = false
+offset_left = 600.0
 offset_top = 281.0
-offset_right = 591.0
+offset_right = 612.0
 offset_bottom = 302.0
+theme_override_fonts/font = ExtResource("3_0667q")
+text = "E"
+uppercase = true
+
+[node name="bake" type="Area2D" parent="." unique_id=1253928723]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bake" unique_id=85244736]
+position = Vector2(180, 525.5)
+shape = SubResource("RectangleShape2D_p7cqo")
+
+[node name="bakee" type="Label" parent="bake" unique_id=504860885]
+visible = false
+offset_left = 168.0
+offset_top = 474.0
+offset_right = 180.0
+offset_bottom = 495.0
 theme_override_fonts/font = ExtResource("3_0667q")
 text = "E"
 uppercase = true
@@ -235,14 +302,15 @@ uppercase = true
 [node name="coffe" type="Area2D" parent="." unique_id=1204105379]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coffe" unique_id=1191278271]
-position = Vector2(864.5, 509)
+position = Vector2(875, 512.5)
 shape = SubResource("RectangleShape2D_41mhs")
 
 [node name="coffee" type="Label" parent="coffe" unique_id=504904065]
-offset_left = 924.0
-offset_top = 476.0
-offset_right = 936.0
-offset_bottom = 497.0
+visible = false
+offset_left = 926.0
+offset_top = 482.0
+offset_right = 938.0
+offset_bottom = 503.0
 theme_override_fonts/font = ExtResource("3_0667q")
 text = "E"
 uppercase = true
@@ -250,17 +318,24 @@ uppercase = true
 [node name="packing" type="Area2D" parent="." unique_id=1544589859]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="packing" unique_id=1120032222]
-position = Vector2(864.75, 410)
+position = Vector2(880, 371)
 shape = SubResource("RectangleShape2D_rpqjd")
 
 [node name="packe" type="Label" parent="packing" unique_id=1550277538]
+visible = false
 offset_left = 927.0
-offset_top = 391.0
+offset_top = 356.0
 offset_right = 939.0
-offset_bottom = 412.0
+offset_bottom = 377.0
 theme_override_fonts/font = ExtResource("3_0667q")
 text = "E"
 uppercase = true
+
+[node name="shelveorder" type="Area2D" parent="." unique_id=604497315]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelveorder" unique_id=1004334487]
+position = Vector2(772, 331)
+shape = SubResource("RectangleShape2D_jt35m")
 
 [node name="Panel2" type="Panel" parent="." unique_id=598109830]
 offset_left = 1054.0
@@ -286,14 +361,8 @@ offset_top = 332.0
 offset_right = 1124.0
 offset_bottom = 389.0
 
-[node name="Panel6" type="Panel" parent="." unique_id=1735825739]
-offset_left = 1054.0
-offset_top = 403.0
-offset_right = 1124.0
-offset_bottom = 460.0
-
 [node name="Node2D" parent="." unique_id=265317266 instance=ExtResource("3_ro446")]
-position = Vector2(651, 538)
+position = Vector2(601, 518)
 scale = Vector2(2, 2)
 
 [node name="Panel" type="Panel" parent="." unique_id=1188728487]
@@ -485,11 +554,41 @@ offset_bottom = -85.0
 scale = Vector2(1.3, 1.3)
 icon = ExtResource("14_77fpp")
 
+[node name="Pizza" type="Sprite2D" parent="." unique_id=1119678451]
+visible = false
+position = Vector2(1089, 148)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("5_mh3ht")
+
 [node name="Cheeseonpizza" type="Sprite2D" parent="." unique_id=1934154484]
 visible = false
 position = Vector2(1090, 148)
-scale = Vector2(1.5937507, 1.53125)
+scale = Vector2(1.625, 1.561)
 texture = ExtResource("7_rbmyh")
+
+[node name="Cookedpizza" type="Sprite2D" parent="." unique_id=1904958037]
+visible = false
+position = Vector2(1090, 149)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("20_lh2q1")
+
+[node name="Cookedcheesepiza" type="Sprite2D" parent="." unique_id=896489110]
+visible = false
+position = Vector2(1090, 149)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("21_jt35m")
+
+[node name="Peperoniaonpizza" type="Sprite2D" parent="." unique_id=1369940555]
+visible = false
+position = Vector2(1090, 147)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("9_5afle")
+
+[node name="Oniononpizza" type="Sprite2D" parent="." unique_id=300118988]
+visible = false
+position = Vector2(1090, 149)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("11_41mhs")
 
 [node name="Coffe" type="Sprite2D" parent="." unique_id=863633158]
 visible = false
@@ -509,12 +608,58 @@ position = Vector2(1089, 288)
 scale = Vector2(3.109376, 3.109376)
 texture = ExtResource("22_m6x35")
 
+[node name="PackedOrder" type="Sprite2D" parent="." unique_id=1373077332]
+visible = false
+position = Vector2(1084, 362)
+scale = Vector2(2.3281245, 2.3281245)
+texture = ExtResource("25_jt35m")
+
+[node name="Banner" type="Sprite2D" parent="." unique_id=2059976114]
+position = Vector2(-317, 199.00005)
+scale = Vector2(4.9131103, 3.5781248)
+texture = ExtResource("26_hb8ns")
+
+[node name="pizza" type="Label" parent="Banner" unique_id=193686543]
+offset_left = -43.149864
+offset_top = -15.650658
+offset_right = 86.084175
+offset_bottom = 7.3493423
+scale = Vector2(0.66462874, 0.53048044)
+theme_override_fonts/font = ExtResource("26_p7cqo")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="smoothie" type="Label" parent="Banner" unique_id=1373987641]
+offset_left = -42.946327
+offset_top = -6.427952
+offset_right = 86.2877
+offset_bottom = 16.572048
+scale = Vector2(0.66462874, 0.53048044)
+theme_override_fonts/font = ExtResource("26_p7cqo")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="coffe" type="Label" parent="Banner" unique_id=571945609]
+offset_left = -43.3534
+offset_top = 3.6331863
+offset_right = 85.88062
+offset_bottom = 26.633186
+scale = Vector2(0.66462874, 0.53048044)
+theme_override_fonts/font = ExtResource("26_p7cqo")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1811447875]
+libraries/ = SubResource("AnimationLibrary_lxlwg")
+
 [connection signal="body_entered" from="chopping" to="." method="_on_chopping_body_entered"]
 [connection signal="body_exited" from="chopping" to="." method="_on_chopping_body_exited"]
 [connection signal="body_entered" from="mixing" to="." method="_on_mixing_body_entered"]
 [connection signal="body_exited" from="mixing" to="." method="_on_mixing_body_exited"]
 [connection signal="body_entered" from="pizza" to="." method="_on_pizza_body_entered"]
 [connection signal="body_exited" from="pizza" to="." method="_on_pizza_body_exited"]
+[connection signal="body_entered" from="bake" to="." method="_on_bake_body_entered"]
+[connection signal="body_exited" from="bake" to="." method="_on_bake_body_exited"]
 [connection signal="body_entered" from="coffe" to="." method="_on_coffe_body_entered"]
 [connection signal="body_exited" from="coffe" to="." method="_on_coffe_body_exited"]
 [connection signal="body_entered" from="packing" to="." method="_on_packing_body_entered"]

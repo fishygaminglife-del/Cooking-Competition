@@ -6,8 +6,8 @@
 [node name="Node2D" type="CharacterBody2D" unique_id=1384372168]
 script = ExtResource("1_g2els")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2119123444]
-polygon = PackedVector2Array(-6, -12, 7, -12, 6, -4, 3, -1, 13, 8, 7, 10, 3, 25, 10, 29, 10, 32, -10, 32, -10, 29, -4, 25, -7, 10, -12, 6, -3, -1, -6, -4)
-
 [node name="Cooker" type="Sprite2D" parent="." unique_id=1130771188]
 texture = ExtResource("1_3vyb7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1414135918]
+polygon = PackedVector2Array(-8, 29, 8, 29, 5, 27, 5, 16, 7, 7, 5, 0, 6, -5, 6, -8, 4, -11, -4, -11, -6, -8, -6, -5, -5, 0, -7, 7, -5, 16, -5, 27)

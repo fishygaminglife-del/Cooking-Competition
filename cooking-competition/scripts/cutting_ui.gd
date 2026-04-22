@@ -28,6 +28,11 @@ func load_vegetable(veg_name):
 		$Ingredient.texture = preload("res://assets/arrot.png")
 
 func cut_current_vegetable():
+	if veg_index >= vegetables.size():
+		return
+	if $"../FruitSmoothie".visible or $"../Smoothie".visible:
+		return
+	
 	var veg_name = vegetables[veg_index]
 
 	# show chopped version
@@ -49,6 +54,7 @@ func cut_current_vegetable():
 	else:
 		# done → close UI
 		visible = false
+		veg_index = 0
 		$"../FruitSmoothie".visible = true
 		$"../Panel".visible = false
 		$"../Node2D".SPEED = 150
