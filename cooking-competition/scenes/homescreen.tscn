@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://pf4hasgi515u" path="res://scripts/homescreen.gd" id="1_yl18i"]
 [ext_resource type="Texture2D" uid="uid://v743v35slnq7" path="res://assets/Solo-cook.png" id="2_7idqh"]
 [ext_resource type="AudioStream" uid="uid://4ganlx5pbe6b" path="res://audio/freesound_community-drinking-coffe-107121.mp3" id="2_qe7se"]
-[ext_resource type="FontFile" uid="uid://conhfq3a72ri5" path="res://fonts/Gelasio/static/Gelasio-Bold.ttf" id="3_0667q"]
 [ext_resource type="PackedScene" uid="uid://bl8uglkrytkqc" path="res://scenes/player.tscn" id="3_ro446"]
+[ext_resource type="FontFile" uid="uid://bkj2cbxgae6hr" path="res://fonts/Lilita_One/LilitaOne-Regular.ttf" id="4_510qk"]
 [ext_resource type="Texture2D" uid="uid://bsrv2jblkdnj6" path="res://assets/pizza.png" id="5_mh3ht"]
 [ext_resource type="Script" uid="uid://ecgfxpsmde05" path="res://scripts/cutting_ui.gd" id="6_7qggu"]
 [ext_resource type="Script" uid="uid://coqo6agfvqf78" path="res://scripts/pizza_base.gd" id="6_llku6"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://dwq4hi68ldobr" path="res://assets/smoothie.png" id="22_m6x35"]
 [ext_resource type="Texture2D" uid="uid://04tuelpfmoml" path="res://assets/packed order.png" id="25_jt35m"]
 [ext_resource type="Texture2D" uid="uid://7tsmiocligdj" path="res://assets/banner.png" id="26_hb8ns"]
-[ext_resource type="FontFile" uid="uid://cnoi5fc8p4223" path="res://fonts/Gelasio/Gelasio-VariableFont_wght.ttf" id="26_p7cqo"]
 [ext_resource type="Texture2D" uid="uid://bs78j2kggsgrh" path="res://assets/shelf.png" id="28_510qk"]
 [ext_resource type="Texture2D" uid="uid://d00olhdnaeaem" path="res://assets/order.png" id="29_lxlwg"]
 [ext_resource type="Texture2D" uid="uid://ctyhdumihtrlv" path="res://assets/end.png" id="30_lxlwg"]
@@ -336,7 +335,7 @@ offset_left = 327.0
 offset_top = 419.0
 offset_right = 339.0
 offset_bottom = 440.0
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
 
@@ -351,7 +350,7 @@ offset_left = 457.0
 offset_top = 279.0
 offset_right = 469.0
 offset_bottom = 300.0
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
 
@@ -366,7 +365,7 @@ offset_left = 599.0
 offset_top = 281.0
 offset_right = 611.0
 offset_bottom = 302.0
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
 
@@ -381,7 +380,7 @@ offset_left = 168.0
 offset_top = 474.0
 offset_right = 180.0
 offset_bottom = 495.0
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
 
@@ -396,7 +395,7 @@ offset_left = 1001.0
 offset_top = 483.0
 offset_right = 1013.0
 offset_bottom = 504.0
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
 
@@ -411,7 +410,7 @@ offset_left = 1005.0
 offset_top = 346.0
 offset_right = 1017.0
 offset_bottom = 367.0
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
 
@@ -427,7 +426,7 @@ offset_left = 762.0
 offset_top = 281.0
 offset_right = 774.0
 offset_bottom = 302.0
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
 
@@ -469,8 +468,8 @@ offset_bottom = 194.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6rla7")
 
 [node name="End" type="Sprite2D" parent="." unique_id=20034414]
-position = Vector2(576, 67)
-scale = Vector2(2.7031264, 2.7031264)
+position = Vector2(575.00006, 63.000008)
+scale = Vector2(3.1328125, 3.1328125)
 texture = ExtResource("30_lxlwg")
 
 [node name="Label" type="Label" parent="." unique_id=1736023083]
@@ -478,7 +477,7 @@ offset_left = 534.0
 offset_top = 46.0
 offset_right = 618.0
 offset_bottom = 94.0
-theme_override_fonts/font = ExtResource("26_p7cqo")
+theme_override_fonts/font = ExtResource("4_510qk")
 text = "Press \"E\" to end"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -487,6 +486,71 @@ autowrap_mode = 2
 [node name="Node2D" parent="." unique_id=265317266 groups=["player"] instance=ExtResource("3_ro446")]
 position = Vector2(656, 541)
 scale = Vector2(2, 2)
+
+[node name="Oven" type="Label" parent="." unique_id=2074571181]
+offset_left = 155.0
+offset_top = 438.0
+offset_right = 195.0
+offset_bottom = 461.0
+theme_override_fonts/font = ExtResource("4_510qk")
+text = "Oven"
+
+[node name="Oven2" type="Label" parent="." unique_id=1078059744]
+offset_left = 285.0
+offset_top = 343.0
+offset_right = 355.0
+offset_bottom = 388.0
+theme_override_fonts/font = ExtResource("4_510qk")
+text = "Cutting Board"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Oven3" type="Label" parent="." unique_id=508061323]
+offset_left = 436.0
+offset_top = 261.0
+offset_right = 476.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("4_510qk")
+text = "Blender"
+autowrap_mode = 2
+
+[node name="Oven4" type="Label" parent="." unique_id=1728266189]
+offset_left = 586.0
+offset_top = 263.0
+offset_right = 626.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("4_510qk")
+text = "Pizza"
+autowrap_mode = 2
+
+[node name="Oven5" type="Label" parent="." unique_id=1112083036]
+offset_left = 738.0
+offset_top = 263.0
+offset_right = 778.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("4_510qk")
+text = "Register"
+autowrap_mode = 2
+
+[node name="Oven6" type="Label" parent="." unique_id=737379489]
+offset_left = 984.0
+offset_top = 317.0
+offset_right = 1024.0
+offset_bottom = 362.0
+theme_override_fonts/font = ExtResource("4_510qk")
+text = "Packing"
+autowrap_mode = 2
+
+[node name="Oven7" type="Label" parent="." unique_id=3794042]
+offset_left = 987.0
+offset_top = 427.0
+offset_right = 1027.0
+offset_bottom = 472.0
+rotation = 0.003000994
+theme_override_fonts/font = ExtResource("4_510qk")
+text = "Coffee Brewer"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1188728487]
 visible = false
@@ -809,7 +873,7 @@ offset_left = -528.0
 offset_top = 153.0
 offset_right = -106.0
 offset_bottom = 174.0
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -819,7 +883,7 @@ offset_left = -528.0
 offset_top = 181.0
 offset_right = -106.0
 offset_bottom = 215.99997
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -829,74 +893,10 @@ offset_left = -528.0
 offset_top = 222.0
 offset_right = -108.0
 offset_bottom = 248.00003
-theme_override_fonts/font = ExtResource("3_0667q")
+theme_override_fonts/font = ExtResource("4_510qk")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-
-[node name="Oven" type="Label" parent="." unique_id=2074571181]
-offset_left = 155.0
-offset_top = 438.0
-offset_right = 195.0
-offset_bottom = 461.0
-theme_override_fonts/font = ExtResource("26_p7cqo")
-text = "Oven"
-
-[node name="Oven2" type="Label" parent="." unique_id=1078059744]
-offset_left = 300.0
-offset_top = 358.0
-offset_right = 340.0
-offset_bottom = 403.0
-theme_override_fonts/font = ExtResource("26_p7cqo")
-text = "Cutting Board"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Oven3" type="Label" parent="." unique_id=508061323]
-offset_left = 435.0
-offset_top = 254.0
-offset_right = 475.0
-offset_bottom = 299.0
-theme_override_fonts/font = ExtResource("26_p7cqo")
-text = "Blender"
-autowrap_mode = 2
-
-[node name="Oven4" type="Label" parent="." unique_id=1728266189]
-offset_left = 588.0
-offset_top = 251.0
-offset_right = 628.0
-offset_bottom = 296.0
-theme_override_fonts/font = ExtResource("26_p7cqo")
-text = "Pizza"
-autowrap_mode = 2
-
-[node name="Oven5" type="Label" parent="." unique_id=1112083036]
-offset_left = 738.0
-offset_top = 259.0
-offset_right = 778.0
-offset_bottom = 304.0
-theme_override_fonts/font = ExtResource("26_p7cqo")
-text = "Register"
-autowrap_mode = 2
-
-[node name="Oven6" type="Label" parent="." unique_id=737379489]
-offset_left = 984.0
-offset_top = 317.0
-offset_right = 1024.0
-offset_bottom = 362.0
-theme_override_fonts/font = ExtResource("26_p7cqo")
-text = "Packing"
-autowrap_mode = 2
-
-[node name="Oven7" type="Label" parent="." unique_id=3794042]
-offset_left = 987.0
-offset_top = 427.0
-offset_right = 1027.0
-offset_bottom = 472.0
-theme_override_fonts/font = ExtResource("26_p7cqo")
-text = "Coffe Brewer"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [connection signal="body_entered" from="chopping" to="." method="_on_chopping_body_entered"]
 [connection signal="body_exited" from="chopping" to="." method="_on_chopping_body_exited"]
