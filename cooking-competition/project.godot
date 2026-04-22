@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cooking competition"
-run/main_scene="uid://b1bjredvw1pqh"
+run/main_scene="uid://d1u5d5ry18srd"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

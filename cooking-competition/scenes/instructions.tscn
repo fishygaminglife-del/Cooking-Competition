@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://d07sgye84dvni"]
+
+[ext_resource type="Script" uid="uid://bc77l7nbls2dh" path="res://scripts/instructions.gd" id="1_c00ax"]
+[ext_resource type="Texture2D" uid="uid://burx6lekf2iw1" path="res://assets/cookbg.png" id="1_njqp3"]
+[ext_resource type="Texture2D" uid="uid://4xjyia6sg7i0" path="res://assets/instbox.png" id="2_c00ax"]
+[ext_resource type="FontFile" uid="uid://conhfq3a72ri5" path="res://fonts/Gelasio/static/Gelasio-Bold.ttf" id="3_r7su1"]
+[ext_resource type="FontFile" uid="uid://cnoi5fc8p4223" path="res://fonts/Gelasio/Gelasio-VariableFont_wght.ttf" id="5_r7su1"]
+[ext_resource type="Texture2D" uid="uid://dsxohmjvslgvf" path="res://assets/homebutton.png" id="6_c6be6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2hxp"]
+
+[node name="Node2D" type="Node2D" unique_id=403453372]
+script = ExtResource("1_c00ax")
+
+[node name="Cookbg" type="Sprite2D" parent="." unique_id=1219183967]
+position = Vector2(576, 324)
+texture = ExtResource("1_njqp3")
+
+[node name="Instbox" type="Sprite2D" parent="." unique_id=639938505]
+position = Vector2(576.00006, 371)
+scale = Vector2(2.5078125, 2.5078125)
+texture = ExtResource("2_c00ax")
+
+[node name="Label" type="Label" parent="." unique_id=1870992097]
+offset_left = 417.0
+offset_top = 40.0
+offset_right = 736.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("3_r7su1")
+theme_override_font_sizes/font_size = 38
+text = "INSTRUCTIONS"
+
+[node name="Label2" type="Label" parent="." unique_id=1927495662]
+offset_left = 423.0
+offset_top = 218.0
+offset_right = 729.0
+offset_bottom = 524.0
+theme_override_fonts/font = ExtResource("5_r7su1")
+text = "Welcome to Cooking Competition, currently you will be competing against your self and see how many orders/combinations you can pack in 20 seconds. There are many items, such as making pizza, making coffe, cutting vegetables, mixing vegetables, and cooking the pizza. Drag toppings onto Pizza. Cut vegetables by clicking. Press E at each station to interact. Once you have got all the items, pack the order and go to the register and send it away. Good Luck!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=327485354]
+offset_left = 1065.0
+offset_top = 23.000008
+offset_right = 1097.0
+offset_bottom = 55.000008
+scale = Vector2(1.5, 1.5)
+theme_override_colors/icon_normal_color = Color(0.05490196, 0.8117647, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_i2hxp")
+icon = ExtResource("6_c6be6")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

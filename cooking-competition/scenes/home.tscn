@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://d1u5d5ry18srd"]
+
+[ext_resource type="Texture2D" uid="uid://burx6lekf2iw1" path="res://assets/cookbg.png" id="1_u4wd2"]
+[ext_resource type="Script" uid="uid://dng0wsngce61t" path="res://scripts/home.gd" id="1_w18ys"]
+[ext_resource type="FontFile" uid="uid://bkj2cbxgae6hr" path="res://fonts/Lilita_One/LilitaOne-Regular.ttf" id="3_yxilm"]
+[ext_resource type="Texture2D" uid="uid://4skotghwn7fv" path="res://assets/examplepizza.png" id="4_reixx"]
+[ext_resource type="Texture2D" uid="uid://elyru4r5vecn" path="res://assets/Cooker.png" id="4_yxilm"]
+[ext_resource type="Texture2D" uid="uid://8iq1fuggra11" path="res://assets/Cooker2t.png" id="5_mahjx"]
+
+[sub_resource type="Animation" id="Animation_4fycn"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/Cooker2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vc333"]
+resource_name = "chef"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/Cooker:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer2/Cooker2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mahjx"]
+_data = {
+&"RESET": SubResource("Animation_4fycn"),
+&"chef": SubResource("Animation_vc333")
+}
+
+[sub_resource type="Animation" id="Animation_hhep5"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_cmjdo"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Examplepizza:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 3.1415927, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yu5fn"]
+_data = {
+&"RESET": SubResource("Animation_hhep5"),
+&"spin": SubResource("Animation_cmjdo")
+}
+
+[node name="Node2D" type="Node2D" unique_id=2086380502]
+script = ExtResource("1_w18ys")
+
+[node name="Cookbg" type="Sprite2D" parent="." unique_id=1497650576]
+position = Vector2(576, 324)
+texture = ExtResource("1_u4wd2")
+
+[node name="Label" type="Label" parent="." unique_id=925329180]
+offset_left = 293.0
+offset_top = 24.0
+offset_right = 826.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("3_yxilm")
+theme_override_font_sizes/font_size = 60
+text = "Cooking Competition"
+
+[node name="play" type="Button" parent="." unique_id=1706785290]
+offset_left = 440.0
+offset_top = 215.99997
+offset_right = 584.0
+offset_bottom = 271.0
+scale = Vector2(1.72, 1.72)
+theme_override_fonts/font = ExtResource("3_yxilm")
+theme_override_font_sizes/font_size = 20
+text = "Play"
+
+[node name="inst" type="Button" parent="." unique_id=888707227]
+offset_left = 440.0
+offset_top = 345.0
+offset_right = 584.0
+offset_bottom = 400.0
+scale = Vector2(1.72, 1.72)
+theme_override_fonts/font = ExtResource("3_yxilm")
+theme_override_font_sizes/font_size = 20
+text = "Instructions
+"
+
+[node name="cred" type="Button" parent="." unique_id=1340138247]
+offset_left = 440.0
+offset_top = 482.0
+offset_right = 584.0
+offset_bottom = 537.0
+scale = Vector2(1.72, 1.72)
+theme_override_fonts/font = ExtResource("3_yxilm")
+theme_override_font_sizes/font_size = 20
+text = "Credit"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1138909417]
+libraries/ = SubResource("AnimationLibrary_mahjx")
+autoplay = &"chef"
+speed_scale = 0.707
+
+[node name="Cooker" type="Sprite2D" parent="AnimationPlayer2" unique_id=810455887]
+position = Vector2(953, 364.99997)
+scale = Vector2(6.03125, 6.03125)
+texture = ExtResource("4_yxilm")
+
+[node name="Cooker2" type="Sprite2D" parent="AnimationPlayer2" unique_id=434401481]
+visible = false
+position = Vector2(953, 364.99997)
+scale = Vector2(6.03125, 6.03125)
+texture = ExtResource("5_mahjx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2038538050]
+libraries/ = SubResource("AnimationLibrary_yu5fn")
+autoplay = &"spin"
+speed_scale = 0.1
+
+[node name="Examplepizza" type="Sprite2D" parent="AnimationPlayer" unique_id=1270089973]
+position = Vector2(226.00002, 395)
+rotation = 1.7621633
+scale = Vector2(9.65625, 9.65625)
+texture = ExtResource("4_reixx")
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="inst" to="." method="_on_inst_pressed"]
+[connection signal="pressed" from="cred" to="." method="_on_cred_pressed"]

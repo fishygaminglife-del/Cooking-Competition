@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bjsf0mbj8p8r4"]
+
+[ext_resource type="Texture2D" uid="uid://burx6lekf2iw1" path="res://assets/cookbg.png" id="1_omv6v"]
+[ext_resource type="Script" uid="uid://dp8d4if0tgmr0" path="res://scripts/credit.gd" id="1_su8v0"]
+[ext_resource type="Texture2D" uid="uid://4xjyia6sg7i0" path="res://assets/instbox.png" id="2_su8v0"]
+[ext_resource type="FontFile" uid="uid://conhfq3a72ri5" path="res://fonts/Gelasio/static/Gelasio-Bold.ttf" id="3_2526r"]
+[ext_resource type="FontFile" uid="uid://cnoi5fc8p4223" path="res://fonts/Gelasio/Gelasio-VariableFont_wght.ttf" id="4_sv3s6"]
+[ext_resource type="Texture2D" uid="uid://dsxohmjvslgvf" path="res://assets/homebutton.png" id="5_jx5au"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2c76j"]
+
+[node name="Node2D" type="Node2D" unique_id=1226741971]
+script = ExtResource("1_su8v0")
+
+[node name="Cookbg" type="Sprite2D" parent="." unique_id=197076693]
+position = Vector2(576, 324)
+texture = ExtResource("1_omv6v")
+
+[node name="Instbox" type="Sprite2D" parent="." unique_id=1411740235]
+position = Vector2(576.00006, 367.5)
+scale = Vector2(2.5078125, 2.2578125)
+texture = ExtResource("2_su8v0")
+
+[node name="Label" type="Label" parent="." unique_id=112082049]
+offset_left = 417.0
+offset_top = 40.0
+offset_right = 736.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("3_2526r")
+theme_override_font_sizes/font_size = 38
+text = "CREDIT"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=459434269]
+offset_left = 423.0
+offset_top = 230.0
+offset_right = 729.0
+offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("4_sv3s6")
+text = "All Assets Made By - Vishwa
+Game Made By - Vishwa
+Sound Effets - FreeSound_Community
+Google Font - Gelasio"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=179390310]
+offset_left = 1065.0
+offset_top = 23.000008
+offset_right = 1097.0
+offset_bottom = 55.000008
+scale = Vector2(1.5, 1.5)
+theme_override_colors/icon_normal_color = Color(0.05490196, 0.8117647, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_2c76j")
+icon = ExtResource("5_jx5au")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

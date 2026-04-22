@@ -4,6 +4,9 @@ var onion = 0
 var perperoni = 0
 
 func _ready():
+	cheese = 0
+	onion = 0
+	perperoni = 0
 	add_to_group("pizza")
 	print("Pizza ready")
 

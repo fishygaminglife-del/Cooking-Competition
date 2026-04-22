@@ -8,7 +8,6 @@ var vegetables = [
 
 func _ready() -> void:
 	load_vegetable(vegetables[veg_index])
-
 func _process(delta: float) -> void:
 	if visible:
 		$Knife.position = get_local_mouse_position()
@@ -53,8 +52,9 @@ func cut_current_vegetable():
 		load_vegetable(vegetables[veg_index])
 	else:
 		# done → close UI
-		visible = false
 		veg_index = 0
+		load_vegetable(vegetables[veg_index])
 		$"../FruitSmoothie".visible = true
 		$"../Panel".visible = false
 		$"../Node2D".SPEED = 150
+		visible = false
