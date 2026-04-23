@@ -2,13 +2,14 @@ extends Node2D
 
 var orders = 0
 var area = 0
-var time = 0.0
+var time = 0
 func _ready() -> void:
 	orders = 0
-	time = 0.0
-	
+	time = 0
+	$smoothie2.text = 'Press "E" at different stations to ineract!'
+	$AnimationPlayer.play("banner_move")
 	$CuttingUI.visible = false
-	$bake/bakee.visible = false
+	$bake/bakee.visible = false 
 	$chopping/Chope.visible = false
 	$mixing/Mixe.visible = false
 	$pizza/pizzae.visible = false
@@ -19,7 +20,7 @@ func _ready() -> void:
 	$Coffe.visible = false
 	$Cheeseonpizza.visible = false
 	area = 0
-func _process(delta: float) -> void:
+func _process(delta) -> void:
 	time += delta
 
 func _input(event):
@@ -29,13 +30,17 @@ func _input(event):
 			if not $FruitSmoothie.visible and not $Smoothie.visible:
 				$Node2D.SPEED = 0
 				$Panel.visible = true
+				$UIINSTRUCTIONS.text = 'Cut Vegetables by clicking them, after you are done blend it up for a drink.'
+				$UIINSTRUCTIONS.visible = true
 				$CuttingUI.visible = true
 				$chopping/Chope.visible = false
 		elif area == 2:
 			if $FruitSmoothie.visible == true:
 				$mixing/Mixe.visible = false
 				$FruitSmoothie.visible = false
+				$audio/Blender.play()
 				await get_tree().create_timer(0.5).timeout
+				$audio/Blender.stream_paused = true
 				$Smoothie.visible = true
 			elif $Smoothie.visible:
 				print("Already have")
@@ -45,6 +50,8 @@ func _input(event):
 			if not $Pizza.visible and not $Cookedpizza.visible:
 				$Node2D.SPEED = 0
 				$Panel.visible = true
+				$UIINSTRUCTIONS.text = 'Drag toppings onto the pizza, press the "X" to end (top right), bake pizza when done.'
+				$UIINSTRUCTIONS.visible = true
 				$PizzaBase.visible = true
 				$pizza/pizzae.visible = false
 		elif area == 4:
@@ -54,6 +61,9 @@ func _input(event):
 			$Coffe.visible = true
 			$audio/coffemake.stream_paused = true
 		elif area == 5:
+			$pizza2.text = ""
+			$smoothie2.text = ""
+			$coffe2.text = ""
 			if not $Cookedpizza.visible:
 				if not $Pizza.visible:
 					$pizza2.text = "Get Pizza"
@@ -71,6 +81,7 @@ func _input(event):
 				$pizza2.text = ""
 				$coffe2.text = ""
 				$smoothie2.text = "Completed"
+				$coffe2.text = "Send the order at the register, then make a new one!"
 				$PackedOrder.visible = true
 				$Cookedpizza.visible = false
 				$Cookedcheesepiza.visible = false
@@ -83,7 +94,9 @@ func _input(event):
 		elif area == 6:
 			if $Pizza.visible == true:
 				$bake/bakee.visible = false
+				$audio/Bake.play()
 				await get_tree().create_timer(0.3).timeout
+				$audio/Bake.stream_paused = true
 				$Pizza.visible = false
 				$Cookedpizza.visible = true
 				if $Cheeseonpizza.visible == true:
@@ -110,7 +123,7 @@ func _input(event):
 					$Banner/smoothie.text = "Yay, you beat Cooking Competition!"
 					$AnimationPlayer.play("banner_move")
 					await $AnimationPlayer.animation_finished
-					get_tree().change_scene_to_file("res://scenes/home.tscn")
+					get_tree().change_scene_to_file("res://scenes/end.tscn")
 			$PackedOrder.visible = false
 		elif area == 8:
 			Global.time = time

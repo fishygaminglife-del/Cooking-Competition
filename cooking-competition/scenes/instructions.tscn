@@ -41,7 +41,8 @@ theme_override_fonts/font = ExtResource("4_r7su1")
 theme_override_font_sizes/font_size = 20
 text = "Welcome to Cooking Competition
 
-You will be competing against your self and see how many orders you can pack in 20 seconds.
+Use Arrow keys or WASD to move around.
+You will be competing against your self and see how fast you can pack orders
 There are many items, such as making pizza, making coffee, cutting vegetables, mixing vegetables, and cooking the pizza.
 Drag toppings onto Pizza. Cut vegetables by clicking. Press E at each station to interact.
 Once you have got all the items, pack the order and go to the register and send it away.

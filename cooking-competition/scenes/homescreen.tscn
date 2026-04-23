@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://v743v35slnq7" path="res://assets/Solo-cook.png" id="2_7idqh"]
 [ext_resource type="AudioStream" uid="uid://4ganlx5pbe6b" path="res://audio/freesound_community-drinking-coffe-107121.mp3" id="2_qe7se"]
 [ext_resource type="PackedScene" uid="uid://bl8uglkrytkqc" path="res://scenes/player.tscn" id="3_ro446"]
+[ext_resource type="AudioStream" uid="uid://daid370hnmgup" path="res://audio/mrstokes302-microwave-done-sfx-439539.mp3" id="3_wcjkr"]
+[ext_resource type="AudioStream" uid="uid://841ct787r40e" path="res://audio/blender.mp3" id="4_6rla7"]
 [ext_resource type="FontFile" uid="uid://bkj2cbxgae6hr" path="res://fonts/Lilita_One/LilitaOne-Regular.ttf" id="4_510qk"]
 [ext_resource type="Texture2D" uid="uid://bsrv2jblkdnj6" path="res://assets/pizza.png" id="5_mh3ht"]
 [ext_resource type="Script" uid="uid://ecgfxpsmde05" path="res://scripts/cutting_ui.gd" id="6_7qggu"]
@@ -71,6 +73,9 @@ size = Vector2(123.51822, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gqf7"]
 size = Vector2(66.75, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxlwg"]
+size = Vector2(141, 259)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0667q"]
 size = Vector2(33, 75.5)
@@ -224,6 +229,13 @@ script = ExtResource("1_yl18i")
 [node name="coffemake" type="AudioStreamPlayer" parent="audio" unique_id=596297251]
 stream = ExtResource("2_qe7se")
 
+[node name="Bake" type="AudioStreamPlayer" parent="audio" unique_id=1452789232]
+stream = ExtResource("3_wcjkr")
+volume_db = 24.0
+
+[node name="Blender" type="AudioStreamPlayer" parent="audio" unique_id=125322060]
+stream = ExtResource("4_6rla7")
+
 [node name="SoloCook" type="Sprite2D" parent="." unique_id=1785708069]
 position = Vector2(576, 324)
 texture = ExtResource("2_7idqh")
@@ -323,6 +335,10 @@ shape = SubResource("RectangleShape2D_510qk")
 [node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D" unique_id=1187750305]
 position = Vector2(1012.625, 540)
 shape = SubResource("RectangleShape2D_7gqf7")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D" unique_id=1291661381]
+position = Vector2(55, 137)
+shape = SubResource("RectangleShape2D_lxlwg")
 
 [node name="chopping" type="Area2D" parent="." unique_id=1644152931]
 
@@ -556,6 +572,17 @@ autowrap_mode = 2
 visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="UIINSTRUCTIONS" type="Label" parent="." unique_id=2071665502]
+offset_left = 464.0
+offset_top = 48.0
+offset_right = 688.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_510qk")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="CuttingUI" type="Control" parent="." unique_id=1843045829]
 visible = false

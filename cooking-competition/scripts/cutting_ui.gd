@@ -54,6 +54,7 @@ func cut_current_vegetable():
 		# done → close UI
 		veg_index = 0
 		load_vegetable(vegetables[veg_index])
+		$"../UIINSTRUCTIONS".visible = false
 		$"../FruitSmoothie".visible = true
 		$"../Panel".visible = false
 		$"../Node2D".SPEED = 150

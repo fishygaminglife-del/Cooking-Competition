@@ -28,6 +28,7 @@ func add_topping(type):
 
 
 func _on_pizza_exit_pressed() -> void:
+	$"../UIINSTRUCTIONS".visible = false
 	$"../Pizza".visible = false
 	$"../Cheeseonpizza".visible = false
 	$"../Peperoniaonpizza".visible = false
