@@ -42,40 +42,42 @@ func random():
 	rand_peperoni = randi_range(0,1)
 	rand_cheese = randi_range(0,1)
 	if rand_drink == 1:
-		print(rand_drink)
+		print("yes drink")
 	elif rand_drink == 0:
-		print(rand_drink)
+		print("no drink")
 	if rand_coff == 1:
-		print(rand_coff)
+		print("yes coffe")
 	elif rand_coff == 0:
-		print(rand_coff)
+		print("no coffe")
 	if rand_pizza == 1:
-		print(rand_pizza)
+		print("yes pizza")
+		if rand_peperoni == 1:
+			print("yes pep")
+		elif rand_peperoni == 0:
+			print("no pep")
+		if rand_onion == 1:
+			print("yues onion")
+		elif rand_onion == 0:
+			print("no onion")
+		if rand_cheese == 1:
+			print("yes cheese")
+		elif rand_cheese == 0:
+			print("no chese")
 	elif rand_pizza == 0:
-		print(rand_pizza)
-	if rand_peperoni == 1:
-		print(rand_peperoni)
-	elif rand_peperoni == 0:
-		print(rand_peperoni)
-	if rand_onion == 1:
-		print(rand_onion)
-	elif rand_onion == 0:
-		print(rand_onion)
-	if rand_cheese == 1:
-		print(rand_cheese)
-	elif rand_cheese == 0:
-		print(rand_cheese)
+		print("no pizza")
+
 func check_randi():
 	if rand_drink == 1:
-		if 	$FruitSmoothie.visible == true:
+		if 	$Smoothie.visible == true:
 			drink = true
 		else:
-			drink = false
+			drink = false	
 	elif rand_drink == 0:
-		if 	$FruitSmoothie.visible == true:
+		if 	$Smoothie.visible == true:
 			drink = false
 		else:
 			drink = true
+	print(drink)
 	if rand_coff == 1:
 		if 	$Coffe.visible == true:
 			coffe = true
@@ -86,6 +88,7 @@ func check_randi():
 			coffe = false
 		else:
 			coffe = true	
+	print(coffe)
 	if rand_pizza == 1:
 		if 	$Cookedpizza.visible == true:
 			pizza = true
@@ -125,6 +128,15 @@ func check_randi():
 	elif rand_pizza == 0:
 		if 	$Cookedpizza.visible == true:
 			pizza = false
+		else:
+			pizza = true
+			onion = true
+			cheese = true
+			peperonia = true
+	print(pizza)
+	print(peperonia)
+	print(cheese)
+	print(onion)
 	if drink and coffe and pizza and onion and peperonia and cheese:
 		print("all good")
 func _input(event):
@@ -232,6 +244,7 @@ func _input(event):
 			else:
 				print("all bad")
 			$PackedOrder.visible = false
+			random()
 			
 		elif area == 8:
 			Global.time = time
