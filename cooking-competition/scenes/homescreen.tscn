@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bs78j2kggsgrh" path="res://assets/shelf.png" id="28_510qk"]
 [ext_resource type="Texture2D" uid="uid://d00olhdnaeaem" path="res://assets/order.png" id="29_lxlwg"]
 [ext_resource type="Texture2D" uid="uid://ctyhdumihtrlv" path="res://assets/end.png" id="30_lxlwg"]
+[ext_resource type="Texture2D" uid="uid://elyru4r5vecn" path="res://assets/Cooker.png" id="32_6rla7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7idqh"]
 size = Vector2(1152, 20)
@@ -924,6 +925,11 @@ theme_override_fonts/font = ExtResource("4_510qk")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Cooker" type="Sprite2D" parent="." unique_id=957469076]
+position = Vector2(808, 194)
+scale = Vector2(2.09375, 2.09375)
+texture = ExtResource("32_6rla7")
 
 [connection signal="body_entered" from="chopping" to="." method="_on_chopping_body_entered"]
 [connection signal="body_exited" from="chopping" to="." method="_on_chopping_body_exited"]
