@@ -12,8 +12,11 @@
 [ext_resource type="Script" uid="uid://coqo6agfvqf78" path="res://scripts/pizza_base.gd" id="6_llku6"]
 [ext_resource type="Texture2D" uid="uid://r5g2f12v2ybp" path="res://assets/cuttingboard.png" id="7_1mfho"]
 [ext_resource type="Texture2D" uid="uid://dq10n3ip2plbd" path="res://assets/cheeseonpizza.png" id="7_rbmyh"]
+[ext_resource type="Texture2D" uid="uid://c41nmaq80ak4m" path="res://assets/trashcan.png" id="8_6d5mt"]
 [ext_resource type="Texture2D" uid="uid://xf6scoqsdamh" path="res://assets/pickle.png" id="8_6l11k"]
+[ext_resource type="Texture2D" uid="uid://d4fsip7fkg5v" path="res://sprite sheet/npc walk.png" id="8_i6vn4"]
 [ext_resource type="Texture2D" uid="uid://4f3isqr3ovb1" path="res://assets/peperoniaonpizza.png" id="9_5afle"]
+[ext_resource type="Texture2D" uid="uid://cgbpps07mks8i" path="res://assets/stations.png" id="9_6d5mt"]
 [ext_resource type="Texture2D" uid="uid://du5xnnbgylwsg" path="res://assets/knifecursor.png" id="9_m6x35"]
 [ext_resource type="Texture2D" uid="uid://0r1snyvfk06f" path="res://assets/oniononpizza.png" id="11_41mhs"]
 [ext_resource type="Texture2D" uid="uid://dc4accihfcfi1" path="res://assets/peperonia.png" id="12_rpqjd"]
@@ -31,87 +34,43 @@
 [ext_resource type="Texture2D" uid="uid://bs78j2kggsgrh" path="res://assets/shelf.png" id="28_510qk"]
 [ext_resource type="Texture2D" uid="uid://d00olhdnaeaem" path="res://assets/order.png" id="29_lxlwg"]
 [ext_resource type="Texture2D" uid="uid://ctyhdumihtrlv" path="res://assets/end.png" id="30_lxlwg"]
-[ext_resource type="Texture2D" uid="uid://elyru4r5vecn" path="res://assets/Cooker.png" id="32_6rla7"]
+[ext_resource type="Texture2D" uid="uid://b3nckp4ii4tph" path="res://assets/Txt bub.png" id="33_cn5g3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7idqh"]
-size = Vector2(1152, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vve0d"]
+atlas = ExtResource("8_i6vn4")
+region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro446"]
-size = Vector2(657, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuds0"]
+atlas = ExtResource("8_i6vn4")
+region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5pf5"]
-size = Vector2(20, 159)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6yui"]
+atlas = ExtResource("8_i6vn4")
+region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wg5m"]
-size = Vector2(74, 20)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wdhb"]
+atlas = ExtResource("8_i6vn4")
+region = Rect2(96, 0, 32, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh3ht"]
-size = Vector2(20, 234.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhtrk"]
-size = Vector2(20, 232)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2hd"]
-size = Vector2(65, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj17h"]
-size = Vector2(20, 518.125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r6gg"]
-size = Vector2(20, 500)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_llku6"]
-size = Vector2(38.5, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_77fpp"]
-size = Vector2(34.5, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4biml"]
-size = Vector2(90, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_510qk"]
-size = Vector2(123.51822, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gqf7"]
-size = Vector2(66.75, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxlwg"]
-size = Vector2(141, 259)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0667q"]
-size = Vector2(33, 75.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5afle"]
-size = Vector2(57, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe7se"]
-size = Vector2(93, 41)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7cqo"]
-size = Vector2(191, 169)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_41mhs"]
-size = Vector2(46.5, 67)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqjd"]
-size = Vector2(42, 53)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt35m"]
-size = Vector2(94, 38)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcjkr"]
-size = Vector2(200, 94)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rla7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llku6"]
-bg_color = Color(0.5609549, 0.5609549, 0.56095487, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77fpp"]
-bg_color = Color(0.32915837, 0.3291584, 0.3291583, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5afle"]
-bg_color = Color(0.32941177, 0.32941177, 0.32941177, 1)
+[sub_resource type="SpriteFrames" id="SpriteFrames_lacd4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vve0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuds0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6yui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wdhb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_4biml"]
 length = 0.001
@@ -162,6 +121,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-528, 222)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(860, 63.999985)]
 }
 
 [sub_resource type="Animation" id="Animation_510qk"]
@@ -216,11 +187,131 @@ tracks/3/keys = {
 "values": [Vector2(388.43903, -35.50003), Vector2(388.439, 222), Vector2(388.439, 222), Vector2(388.43903, -35.50003)]
 }
 
+[sub_resource type="Animation" id="Animation_i6vn4"]
+resource_name = "npc walk"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.4, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(784.99994, 62.999996), Vector2(860, 63.999985), Vector2(847, 190), Vector2(764.99994, 226)]
+}
+
+[sub_resource type="Animation" id="Animation_6d5mt"]
+resource_name = "npc_exit"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.47, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(764.99994, 226), Vector2(833, 149), Vector2(864.99994, 61), Vector2(947.99994, 61)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lxlwg"]
 _data = {
 &"RESET": SubResource("Animation_4biml"),
-&"banner_move": SubResource("Animation_510qk")
+&"banner_move": SubResource("Animation_510qk"),
+&"npc walk": SubResource("Animation_i6vn4"),
+&"npc_exit": SubResource("Animation_6d5mt")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7idqh"]
+size = Vector2(1152, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro446"]
+size = Vector2(657, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5pf5"]
+size = Vector2(20, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wg5m"]
+size = Vector2(74, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh3ht"]
+size = Vector2(20, 234.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhtrk"]
+size = Vector2(20, 232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh2hd"]
+size = Vector2(65, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj17h"]
+size = Vector2(20, 518.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r6gg"]
+size = Vector2(20, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llku6"]
+size = Vector2(38.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77fpp"]
+size = Vector2(34.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4biml"]
+size = Vector2(90, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_510qk"]
+size = Vector2(123.51822, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gqf7"]
+size = Vector2(66.75, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxlwg"]
+size = Vector2(141, 259)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vve0d"]
+size = Vector2(46, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0667q"]
+size = Vector2(33, 75.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5afle"]
+size = Vector2(57, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe7se"]
+size = Vector2(93, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7cqo"]
+size = Vector2(191, 169)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41mhs"]
+size = Vector2(46.5, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpqjd"]
+size = Vector2(42, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt35m"]
+size = Vector2(94, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcjkr"]
+size = Vector2(191, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6vn4"]
+size = Vector2(56, 70)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rla7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llku6"]
+bg_color = Color(0.5609549, 0.5609549, 0.56095487, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77fpp"]
+bg_color = Color(0.32915837, 0.3291584, 0.3291583, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5afle"]
+bg_color = Color(0.32941177, 0.32941177, 0.32941177, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1008204636]
 script = ExtResource("1_yl18i")
@@ -244,6 +335,69 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=121101212]
 position = Vector2(576, 323)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=818005983]
+position = Vector2(860, 63.999985)
+scale = Vector2(2.0937514, 2.0937514)
+sprite_frames = SubResource("SpriteFrames_lacd4")
+frame_progress = 0.37110895
+speed_scale = 0.7
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=525830753]
+libraries/ = SubResource("AnimationLibrary_lxlwg")
+
+[node name="Stations" type="Sprite2D" parent="." unique_id=301400621]
+position = Vector2(576, 325)
+texture = ExtResource("9_6d5mt")
+
+[node name="Trashcan2" type="Sprite2D" parent="." unique_id=1893474957]
+position = Vector2(1053, 583)
+scale = Vector2(1.53125, 1.53125)
+texture = ExtResource("8_6d5mt")
+
+[node name="Node2D" parent="." unique_id=265317266 groups=["player"] instance=ExtResource("3_ro446")]
+position = Vector2(652, 556)
+scale = Vector2(2, 2)
+
+[node name="ordering" type="Node2D" parent="." unique_id=234439996]
+position = Vector2(-83, 7)
+
+[node name="TxtBub" type="Sprite2D" parent="ordering" unique_id=1331915704]
+modulate = Color(0.13071045, 0.08912402, 0.004380939, 1)
+position = Vector2(748, 136.00002)
+scale = Vector2(0.6984128, 0.76865673)
+texture = ExtResource("33_cn5g3")
+flip_h = true
+
+[node name="Cookedpizza" type="Sprite2D" parent="ordering" unique_id=553748152]
+position = Vector2(745, 133)
+scale = Vector2(1.6000001, 1.5999999)
+texture = ExtResource("20_lh2q1")
+
+[node name="Cookedcheesepiza" type="Sprite2D" parent="ordering" unique_id=2115144540]
+position = Vector2(745.00006, 133)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("21_jt35m")
+
+[node name="Oniononpizza" type="Sprite2D" parent="ordering" unique_id=1529116972]
+position = Vector2(745.00006, 134)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_41mhs")
+
+[node name="Peperoniaonpizza" type="Sprite2D" parent="ordering" unique_id=1553560683]
+position = Vector2(746.00006, 133)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("9_5afle")
+
+[node name="Smoothie" type="Sprite2D" parent="ordering" unique_id=633086770]
+position = Vector2(700.99994, 132.99998)
+scale = Vector2(2.2090633, 2.2090633)
+texture = ExtResource("22_m6x35")
+
+[node name="Coffe" type="Sprite2D" parent="ordering" unique_id=1356159730]
+position = Vector2(797, 133)
+scale = Vector2(2.0165622, 2.0165622)
+texture = ExtResource("15_5afle")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=464002419]
 
@@ -341,6 +495,10 @@ shape = SubResource("RectangleShape2D_7gqf7")
 position = Vector2(55, 137)
 shape = SubResource("RectangleShape2D_lxlwg")
 
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D" unique_id=947436771]
+position = Vector2(1058, 599)
+shape = SubResource("RectangleShape2D_vve0d")
+
 [node name="chopping" type="Area2D" parent="." unique_id=1644152931]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chopping" unique_id=1177224911]
@@ -404,14 +562,14 @@ uppercase = true
 [node name="coffe" type="Area2D" parent="." unique_id=1204105379]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coffe" unique_id=1191278271]
-position = Vector2(949.75, 513.5)
+position = Vector2(949.75, 489.5)
 shape = SubResource("RectangleShape2D_41mhs")
 
 [node name="coffee" type="Label" parent="coffe" unique_id=504904065]
-offset_left = 1001.0
-offset_top = 483.0
-offset_right = 1013.0
-offset_bottom = 504.0
+offset_left = 1003.0
+offset_top = 465.0
+offset_right = 1015.0
+offset_bottom = 486.0
 theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
@@ -419,14 +577,14 @@ uppercase = true
 [node name="packing" type="Area2D" parent="." unique_id=1544589859]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="packing" unique_id=1120032222]
-position = Vector2(952, 360)
+position = Vector2(952, 346)
 shape = SubResource("RectangleShape2D_rpqjd")
 
 [node name="packe" type="Label" parent="packing" unique_id=1550277538]
-offset_left = 1005.0
-offset_top = 346.0
-offset_right = 1017.0
-offset_bottom = 367.0
+offset_left = 1007.0
+offset_top = 337.0
+offset_right = 1019.0
+offset_bottom = 358.0
 theme_override_fonts/font = ExtResource("4_510qk")
 text = "E"
 uppercase = true
@@ -450,8 +608,24 @@ uppercase = true
 [node name="end" type="Area2D" parent="." unique_id=273456486]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="end" unique_id=1798552630]
-position = Vector2(577, 159)
+position = Vector2(473.5, 151.5)
 shape = SubResource("RectangleShape2D_wcjkr")
+
+[node name="trash" type="Area2D" parent="." unique_id=449820578]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trash" unique_id=178033398]
+position = Vector2(1002, 612)
+shape = SubResource("RectangleShape2D_i6vn4")
+
+[node name="trashe" type="Label" parent="trash" unique_id=352358624]
+visible = false
+offset_left = 1029.0
+offset_top = 581.0
+offset_right = 1041.0
+offset_bottom = 602.0
+theme_override_fonts/font = ExtResource("4_510qk")
+text = "E"
+uppercase = true
 
 [node name="Panel2" type="Panel" parent="." unique_id=598109830]
 offset_left = 1054.0
@@ -478,31 +652,27 @@ offset_right = 1124.0
 offset_bottom = 393.0
 
 [node name="Panel6" type="Panel" parent="." unique_id=490641634]
-offset_left = 485.0
+offset_left = 379.0
 offset_top = 112.0
-offset_right = 674.0
-offset_bottom = 194.0
+offset_right = 568.0
+offset_bottom = 189.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6rla7")
 
 [node name="End" type="Sprite2D" parent="." unique_id=20034414]
-position = Vector2(575.00006, 63.000008)
+position = Vector2(469.00006, 63.000008)
 scale = Vector2(3.1328125, 3.1328125)
 texture = ExtResource("30_lxlwg")
 
 [node name="Label" type="Label" parent="." unique_id=1736023083]
-offset_left = 534.0
+offset_left = 428.0
 offset_top = 46.0
-offset_right = 618.0
+offset_right = 512.0
 offset_bottom = 94.0
 theme_override_fonts/font = ExtResource("4_510qk")
 text = "Press \"E\" to end"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-
-[node name="Node2D" parent="." unique_id=265317266 groups=["player"] instance=ExtResource("3_ro446")]
-position = Vector2(656, 541)
-scale = Vector2(2, 2)
 
 [node name="Oven" type="Label" parent="." unique_id=2074571181]
 offset_left = 155.0
@@ -550,19 +720,19 @@ text = "Register"
 autowrap_mode = 2
 
 [node name="Oven6" type="Label" parent="." unique_id=737379489]
-offset_left = 984.0
-offset_top = 317.0
-offset_right = 1024.0
-offset_bottom = 362.0
+offset_left = 985.0
+offset_top = 315.0
+offset_right = 1025.0
+offset_bottom = 360.0
 theme_override_fonts/font = ExtResource("4_510qk")
 text = "Packing"
 autowrap_mode = 2
 
 [node name="Oven7" type="Label" parent="." unique_id=3794042]
 offset_left = 987.0
-offset_top = 427.0
+offset_top = 410.00003
 offset_right = 1027.0
-offset_bottom = 472.0
+offset_bottom = 455.00003
 rotation = 0.003000994
 theme_override_fonts/font = ExtResource("4_510qk")
 text = "Coffee Brewer"
@@ -829,6 +999,33 @@ position = Vector2(1084, 366)
 scale = Vector2(2.3281245, 2.3281245)
 texture = ExtResource("25_jt35m")
 
+[node name="Trashcan" type="Node2D" parent="." unique_id=1325348629]
+visible = false
+
+[node name="Button" type="Button" parent="Trashcan" unique_id=1118814071]
+offset_left = 1054.0
+offset_top = 123.0
+offset_right = 1124.0
+offset_bottom = 180.0
+
+[node name="Button2" type="Button" parent="Trashcan" unique_id=1076163716]
+offset_left = 1054.0
+offset_top = 195.0
+offset_right = 1124.0
+offset_bottom = 252.0
+
+[node name="Button3" type="Button" parent="Trashcan" unique_id=1854208887]
+offset_left = 1054.0
+offset_top = 266.0
+offset_right = 1124.0
+offset_bottom = 323.0
+
+[node name="Button4" type="Button" parent="Trashcan" unique_id=916204544]
+offset_left = 1054.0
+offset_top = 336.0
+offset_right = 1124.0
+offset_bottom = 393.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1811447875]
 libraries/ = SubResource("AnimationLibrary_lxlwg")
 
@@ -926,11 +1123,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Cooker" type="Sprite2D" parent="." unique_id=957469076]
-position = Vector2(808, 194)
-scale = Vector2(2.09375, 2.09375)
-texture = ExtResource("32_6rla7")
-
 [connection signal="body_entered" from="chopping" to="." method="_on_chopping_body_entered"]
 [connection signal="body_exited" from="chopping" to="." method="_on_chopping_body_exited"]
 [connection signal="body_entered" from="mixing" to="." method="_on_mixing_body_entered"]
@@ -947,4 +1139,10 @@ texture = ExtResource("32_6rla7")
 [connection signal="body_exited" from="shelveorder" to="." method="_on_shelveorder_body_exited"]
 [connection signal="body_entered" from="end" to="." method="_on_end_body_entered"]
 [connection signal="body_exited" from="end" to="." method="_on_end_body_exited"]
+[connection signal="body_entered" from="trash" to="." method="_on_trash_body_entered"]
+[connection signal="body_exited" from="trash" to="." method="_on_trash_body_exited"]
 [connection signal="pressed" from="PizzaBase/pizza exit" to="PizzaBase" method="_on_pizza_exit_pressed"]
+[connection signal="pressed" from="Trashcan/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Trashcan/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Trashcan/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Trashcan/Button4" to="." method="_on_button_4_pressed"]

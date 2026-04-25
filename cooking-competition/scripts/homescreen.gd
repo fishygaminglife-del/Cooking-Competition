@@ -17,8 +17,11 @@ var time = 0
 func _ready() -> void:
 	orders = 0
 	time = 0
-	random()
+	$ordering.visible = false
+	npc_order()
+	$ordering.visible = false
 	$smoothie2.text = 'Press "E" at different stations to ineract!'
+	$AnimatedSprite2D.play("default")
 	$AnimationPlayer.play("banner_move")
 	$CuttingUI.visible = false
 	$bake/bakee.visible = false 
@@ -41,31 +44,54 @@ func random():
 	rand_onion = randi_range(0,1)
 	rand_peperoni = randi_range(0,1)
 	rand_cheese = randi_range(0,1)
-	if rand_drink == 1:
-		print("yes drink")
+	$ordering/Cookedpizza.visible = false
+	$ordering/Cookedcheesepiza.visible = false
+	$ordering/Oniononpizza.visible = false
+	$ordering/Peperoniaonpizza.visible = false
+	$ordering/Smoothie.visible = false
+	$ordering/Coffe.visible = false
+	if rand_drink == 0 and rand_coff == 0 and rand_pizza == 0:
+		random()
+	elif rand_drink == 1:
+		$ordering/Smoothie.visible = true
 	elif rand_drink == 0:
-		print("no drink")
+		$ordering/Smoothie.visible = false
 	if rand_coff == 1:
-		print("yes coffe")
+		$ordering/Coffe.visible = true
 	elif rand_coff == 0:
-		print("no coffe")
+		$ordering/Coffe.visible = false
 	if rand_pizza == 1:
-		print("yes pizza")
+		$ordering/Cookedpizza.visible = true
 		if rand_peperoni == 1:
-			print("yes pep")
+			$ordering/Peperoniaonpizza.visible = true
 		elif rand_peperoni == 0:
-			print("no pep")
+			$ordering/Peperoniaonpizza.visible = false
 		if rand_onion == 1:
-			print("yues onion")
+			$ordering/Oniononpizza.visible = true
 		elif rand_onion == 0:
-			print("no onion")
+			$ordering/Oniononpizza.visible = false
 		if rand_cheese == 1:
-			print("yes cheese")
+			$ordering/Cookedcheesepiza.visible = true
 		elif rand_cheese == 0:
-			print("no chese")
+			$ordering/Cookedcheesepiza.visible = false
 	elif rand_pizza == 0:
-		print("no pizza")
+		$ordering/Cookedpizza.visible = false
+func npc_order():
+	var npc_num = 0
+	if npc_num == 0:
+		$AnimationPlayer2.play("npc walk")
+		await $AnimationPlayer2.animation_finished
+		$ordering.visible = true
+		random()
 
+		npc_num = 1
+	elif npc_num == 1:
+		$AnimatedSprite2D.modulate = Color(0.585, 0.321, 0.183, 1.0)
+		$AnimationPlayer2.play("npc walk")
+		await $AnimationPlayer2.animation_finished
+		$ordering.visible = true
+		random()
+		npc_num = 0
 func check_randi():
 	if rand_drink == 1:
 		if 	$Smoothie.visible == true:
@@ -164,6 +190,9 @@ func _input(event):
 				print("Cut Vegetables")
 		elif area == 3:
 			if not $Pizza.visible and not $Cookedpizza.visible:
+				$PizzaBase.cheese = 0
+				$PizzaBase.perperoni = 0
+				$PizzaBase.onion = 0
 				$Node2D.SPEED = 0
 				$Panel.visible = true
 				$UIINSTRUCTIONS.text = 'Drag toppings onto the pizza, press the "X" to end (top right), bake pizza when done.'
@@ -177,27 +206,6 @@ func _input(event):
 			$Coffe.visible = true
 			$audio/coffemake.stream_paused = true
 		elif area == 5:
-			#$pizza2.text = ""
-			#$smoothie2.text = ""
-			#$coffe2.text = ""
-			#if not $Cookedpizza.visible:
-				#if not $Pizza.visible:
-					#$pizza2.text = "Get Pizza"
-				#else:
-					#$pizza2.text = "Cook Pizza"
-			#if not $Smoothie.visible:
-				#if not $FruitSmoothie.visible:
-					#$smoothie2.text = "Chop Vegetables"
-				#else:
-					#$smoothie2.text = "Mix Vegetables"
-			#if not $Coffe.visible:
-				#$coffe2.text = "Brew Coffe"
-			#
-			#if 	$Cookedpizza.visible and $Coffe.visible and $Smoothie.visible:
-				#$pizza2.text = ""
-				#$coffe2.text = ""
-				#$smoothie2.text = "Completed"
-				#$coffe2.text = "Send the order at the register, then make a new one!"
 			check_randi()	
 			$PackedOrder.visible = true
 			$Cookedpizza.visible = false
@@ -206,7 +214,6 @@ func _input(event):
 			$Peperoniaonpizza.visible = false
 			$Smoothie.visible = false
 			$Coffe.visible = false
-			$AnimationPlayer.play("banner_move")
 		elif area == 6:
 			if $Pizza.visible == true:
 				$bake/bakee.visible = false
@@ -221,6 +228,16 @@ func _input(event):
 		elif area == 7:
 			if $PackedOrder.visible and drink and coffe and pizza and onion and peperonia and cheese:
 				orders += 1
+				$ordering.visible = false
+				$ordering/Cookedpizza.visible = false
+				$ordering/Cookedcheesepiza.visible = false
+				$ordering/Oniononpizza.visible = false
+				$ordering/Peperoniaonpizza.visible = false
+				$ordering/Smoothie.visible = false
+				$ordering/Coffe.visible = false
+				$AnimationPlayer2.play("npc_exit")
+				await $AnimationPlayer2.animation_finished
+				npc_order()
 				if orders == 1:
 					$Shelforder/Order.visible = true
 				elif orders == 2:
@@ -242,14 +259,25 @@ func _input(event):
 					await $AnimationPlayer.animation_finished
 					get_tree().change_scene_to_file("res://scenes/end.tscn")
 			else:
+				$ordering.visible = false
+				$ordering/Cookedpizza.visible = false
+				$ordering/Cookedcheesepiza.visible = false
+				$ordering/Oniononpizza.visible = false
+				$ordering/Peperoniaonpizza.visible = false
+				$ordering/Smoothie.visible = false
+				$ordering/Coffe.visible = false
+				$AnimationPlayer2.play("npc_exit")
+				await $AnimationPlayer2.animation_finished
+				npc_order()
 				print("all bad")
 			$PackedOrder.visible = false
-			random()
 			
 		elif area == 8:
 			Global.time = time
 			Global.orders = orders
 			get_tree().change_scene_to_file("res://scenes/end.tscn")
+		elif area == 9:
+			$Trashcan.visible = true
 func _on_chopping_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		$mixing/Mixe.visible = false
@@ -341,3 +369,37 @@ func _on_end_body_entered(body: Node2D) -> void:
 		area = 8
 func _on_end_body_exited(body: Node2D) -> void:
 	area = 0
+
+
+
+
+
+func _on_trash_body_entered(body: Node2D) -> void:
+	area = 9
+	$trash/trashe.visible = true
+
+func _on_trash_body_exited(body: Node2D) -> void:
+	area = 0
+	$Trashcan.visible = false
+	$trash/trashe.visible = false
+
+func _on_button_pressed() -> void:
+	$Pizza.visible = false
+	$Cheeseonpizza.visible = false
+	$Cookedpizza.visible = false
+	$Cookedcheesepiza.visible = false
+	$Peperoniaonpizza.visible = false
+	$Oniononpizza.visible = false
+
+
+func _on_button_2_pressed() -> void:
+	$Coffe.visible = false
+
+
+func _on_button_3_pressed() -> void:
+	$Smoothie.visible = false
+	$FruitSmoothie.visible = false
+
+
+func _on_button_4_pressed() -> void:
+	$PackedOrder.visible = false
